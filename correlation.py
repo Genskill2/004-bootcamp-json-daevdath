@@ -2,12 +2,12 @@
 import json
 import math 
 
-def load_journal(fname:str):->dict:
+def load_journal(fname:str)->dict:
  json_data=open(fname,"r")
  data=json.loads(json_data)
  return data
  
-def compute_phi(fname:str,event:str):->float:
+def compute_phi(fname:str,event:str)->float:
  data=load_journal(fname)
  corr=0.0
  np1,n1p,np0,n0p=0,0,0,0
@@ -44,7 +44,7 @@ def compute_correlations(fname:str)->dict:
      eventphi[event]=compute_phi(fname,event)
   return eventphi   
   
-def diagnose(fname):
+def diagnose(fname)->list:
  eventphi=compute_correlations(fname)
  req_list=[]
  max_event=-2
