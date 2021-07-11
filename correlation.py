@@ -61,10 +61,10 @@ def diagnose(fname)->dict:
  
  for event in eventphi:
   
-  if eventphi[event]>Max:
+  if (eventphi[event]<Min):
    max_event=event
   
-  elif eventphi[event]<Min:
+  elif (eventphi[event]>Max):
    min_event=event
  
  req_list.append(max_event)
