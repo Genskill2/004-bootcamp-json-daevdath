@@ -4,7 +4,7 @@ import math
 
 def load_journal(fname:str)->dict:
  json_data=open(fname,"r")
- data=json.loads(json_data)
+ data=json.load(json_data)
  return data
  
 def compute_phi(fname:str,event:str)->float:
@@ -44,16 +44,17 @@ def compute_correlations(fname:str)->dict:
      eventphi[event]=compute_phi(fname,event)
   return eventphi   
   
-def diagnose(fname)->list:
+def diagnose(fname)->dict:
  eventphi=compute_correlations(fname)
  req_list=[]
- max_event=-2
- min_event=2
+ Max=-2
+ Min=2
+ max_event,min_event="",""
  for event in eventphi:
-  if eventphi[event]>max_corr:
+  if eventphi[event]>Max:
    max_event=event
-  if eventphi[event]<min_corr:
-   min_corr=event
+  if eventphi[event]<Min:
+   min_event=event
  req_list.append(max_event)
  req_list.append(min_event)
  return req_list   
