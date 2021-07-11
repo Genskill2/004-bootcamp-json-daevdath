@@ -21,9 +21,9 @@ def compute_phi(fname:str,event:str)->float:
    np0+=1
   if event in events:
    n1p+=1
-    if(state):
+   if(state):
      n11+=1
-    else:
+   else:
      n10+=1
   else:
    n0p+=1
