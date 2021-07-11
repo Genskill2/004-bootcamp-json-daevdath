@@ -28,7 +28,7 @@ def compute_phi(fname:str,event:str)->float:
   else:
    n0p+=1
    if(state):
-    no1+=1
+    n01+=1
    else:
     n00+=1  
   corr=((n11*n00)-(n01*n10))/math.sqrt(np1*np0*n1p*n0p)
