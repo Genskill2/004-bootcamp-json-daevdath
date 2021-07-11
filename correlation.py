@@ -39,8 +39,8 @@ def compute_correlations(fname:str)->dict:
   eventphi={}
   for i in range(len(data)):
    events=data[i]["events"]
-   for event in events
-    if event not in eventphi 
+   for event in events:
+    if event not in eventphi: 
      eventphi[event]=compute_phi(fname,event)
   return eventphi   
   
@@ -49,7 +49,7 @@ def diagnose(fname)->list:
  req_list=[]
  max_event=-2
  min_event=2
- for event in eventphi
+ for event in eventphi:
   if eventphi[event]>max_corr:
    max_event=event
   if eventphi[event]<min_corr:
