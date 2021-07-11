@@ -14,7 +14,7 @@ def compute_phi(fname:str,event:str)->float:
  n11,n10,n01,n00=0,0,0,0
  for i in range(len(data)):
   state=dict(data[i])["squirrel"]
-  event=dict(data[i])["events"]
+  events=dict(data[i])["events"]
   if state==True:
    np1+=1
   else:
