@@ -19,7 +19,6 @@ def compute_phi(fname:str,event:str)->float:
   
   if state==True:
     np1+=1
-  
   else:
     np0+=1
   
@@ -37,8 +36,8 @@ def compute_phi(fname:str,event:str)->float:
     else:
       n00+=1  
   
-  corr=((n11*n00)-(n01*n10))/math.sqrt(np1*np0*n1p*n0p)
-  return corr
+ corr=((n11*n00)-(n01*n10))/math.sqrt(np1*np0*n1p*n0p)
+ return corr
   
 def compute_correlations(fname:str)->dict: 
   data=load_journal(fname)
