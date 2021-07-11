@@ -52,7 +52,7 @@ def compute_correlations(fname:str)->dict:
   
   return eventphi   
   
-def diagnose(fname)->dict:
+def diagnose(fname:str)->dict:
  eventphi=compute_correlations(fname)
  req_list=[]
  Max=-2
@@ -60,12 +60,12 @@ def diagnose(fname)->dict:
  max_event,min_event="",""
  
  for event in eventphi:
-  
   if (eventphi[event]<Min):
-   max_event=event
-  
-  elif (eventphi[event]>Max):
+   Min=eventphi[event]
    min_event=event
+  elif (eventphi[event]>Max):
+   Max=eventphi[event]
+   max_event=event
  
  req_list.append(max_event)
  req_list.append(min_event)
